@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace Registration_System_Dr_T
+namespace Registration_System_Shelby
 {
     public partial class Student_Update_Form : Form
     {

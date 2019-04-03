@@ -24,7 +24,7 @@ namespace Registration_System_Shelby
             Application.Run(new Teacher());
             Application.Run(new Section());
             Application.Run(new Registration());
-
+            Application.Run(new Student_Update_Form());
         }
     }
 }

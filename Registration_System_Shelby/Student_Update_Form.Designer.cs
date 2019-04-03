@@ -1,4 +1,4 @@
-﻿namespace Registration_System_Dr_T
+﻿namespace Registration_System_Shelby
 {
     partial class Student_Update_Form
     {
