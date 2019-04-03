@@ -19,10 +19,12 @@ namespace Registration_System_Shelby
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+           
             Application.Run(new Form1());
             Application.Run(new Teacher());
             Application.Run(new Section());
             Application.Run(new Registration());
+
         }
     }
 }
