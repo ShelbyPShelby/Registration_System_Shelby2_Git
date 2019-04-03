@@ -21,7 +21,7 @@ namespace Registration_System_Shelby
             {
                 conn.Open();
 
-                string query = "SELECT lname, fname, teacher_id FROM teacher_table Order by lname, fname ASC;";
+                string query = "SELECT lname, fname, student_id FROM student_table Order by lname, fname ASC;";
                 MessageBox.Show(query);
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -33,14 +33,33 @@ namespace Registration_System_Shelby
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
                     //  Console.WriteLine(table.Rows[i]["name"]);
-                    MessageBox.Show("Adding Teacher ID: " + table.Rows[i]["teacher_id"]);
-                    studentCombo.Items.Add(table.Rows[i]["teacher_id"] + "," + table.Rows[i]["lname"] + "," + table.Rows[i]["fname"]);
+                    MessageBox.Show("Adding Student ID: " + table.Rows[i]["student_id"]);
+                    studentCombo.Items.Add(table.Rows[i]["student_id"] + "," + table.Rows[i]["lname"] + "," + table.Rows[i]["fname"]);
                 }
                 /*while(reader.Read())
                 {
                     Console.WriteLine(reader["name"] + " - " + reader["city"]);
                 }*/
                 reader.Close();
+
+                
+                string query2 = "SELECT * FROM section_table Order by course_name ASC;";
+                MessageBox.Show(query2);
+                MySqlCommand cmd2 = new MySqlCommand(query2, conn);
+                MySqlDataReader reader2 = cmd2.ExecuteReader();
+
+                DataTable table2 = new DataTable();
+
+                table2.Load(reader2);
+
+                for (int i = 0; i < table2.Rows.Count; i++)
+                {
+                    //  Console.WriteLine(table.Rows[i]["name"]);
+                    MessageBox.Show("Adding Section ID: " + table2.Rows[i]["section_id"]);
+                    sectionCombo.Items.Add(table2.Rows[i]["section_id"] + "," + table2.Rows[i]["course_name"] + "," + table2.Rows[i]["section"]);
+                }
+
+                reader2.Close();
                 conn.Close();
 
             }
@@ -51,18 +70,14 @@ namespace Registration_System_Shelby
         {
             using (MySqlConnection conn = new MySqlConnection("server=localhost;database=registration_db;user=root"))
             {
-                string section = gradeTxt.Text,
-                       days = daysTxt.Text,
-                       start_time = startTxt.Text,
-                       end_time = endTxt.Text,
-                       teacherTextField = studentCombo.Text;
+                string  teacherTextField = studentCombo.Text;
                 string[] words = teacherTextField.Split(',');
                 string teacher_id = words[0];
                        
 
                 conn.Open();
 
-                string query = $"INSERT INTO `section_table` (`section_id`, `teacher_id`, `course_name`, `section`, `days`, `start_time`, `end_time`) VALUES (NULL, '{teacher_id}', '{course_id}', '{section}', '{days}', '{start_time}', '{end_time}');";
+                string query = $"";
                 MessageBox.Show(query);
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 int numRowsAffected = cmd.ExecuteNonQuery();

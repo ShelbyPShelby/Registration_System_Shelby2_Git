@@ -40,28 +40,9 @@ namespace Registration_System_Shelby
                 {
                     Console.WriteLine(reader["name"] + " - " + reader["city"]);
                 }*/
+
+
                 reader.Close();
-
-
-                query = "SELECT * FROM section_table Order by course, section ASC;";
-                MessageBox.Show(query);
-                cmd = new MySqlCommand(query, conn);
-                MySqlDataReader reader2 = cmd.ExecuteReader();
-
-                table = new DataTable();
-
-                table.Load(reader);
-
-                for (int i = 0; i < table.Rows.Count; i++)
-                {
-                    //  Console.WriteLine(table.Rows[i]["name"]);
-                    MessageBox.Show("Adding Section ID: " + table.Rows[i]["section_id"]);
-                    teacherCombo.Items.Add(table.Rows[i]["section_id"] + "," + table.Rows[i]["course"] + "," + table.Rows[i]["section"]);
-                }
-
-
-
-
                 conn.Close();
 
             }

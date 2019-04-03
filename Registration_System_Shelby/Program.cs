@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Shelby Shelby
+//Date:4/2/19
+//Dr.Tyson McMillan
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,6 +22,7 @@ namespace Registration_System_Shelby
             Application.Run(new Form1());
             Application.Run(new Teacher());
             Application.Run(new Section());
+            Application.Run(new Registration());
         }
     }
 }
