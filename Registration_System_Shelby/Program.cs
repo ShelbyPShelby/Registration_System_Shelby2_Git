@@ -19,13 +19,16 @@ namespace Registration_System_Shelby
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           
-            //Application.Run(new Form1());
-            //Application.Run(new Teacher());
-            //Application.Run(new Section());
-            //Application.Run(new Registration());
-            //Application.Run(new Student_Update_Form());
+
+            //Application.Run(new Menu());
+            Application.Run(new Form1());
+            Application.Run(new Teacher());
+            Application.Run(new Section());
+            Application.Run(new Registration());
+            Application.Run(new Student_Update_Form());
             Application.Run(new Teacher_Update_Form());
+            Application.Run(new Section_Update_Form());
+            Application.Run(new Registration_Update_Form());
         }
     }
 }

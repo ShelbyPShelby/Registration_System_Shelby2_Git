@@ -59,11 +59,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration_Update_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration_Update_Form.Designer.cs">
+      <DependentUpon>Registration_Update_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Section_Update_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Section_Update_Form.Designer.cs">
+      <DependentUpon>Section_Update_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Section.cs">
       <SubType>Form</SubType>
@@ -97,8 +115,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration_Update_Form.resx">
+      <DependentUpon>Registration_Update_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Section_Update_Form.resx">
+      <DependentUpon>Section_Update_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Section.resx">
       <DependentUpon>Section.cs</DependentUpon>
